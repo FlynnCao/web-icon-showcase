@@ -1,0 +1,109 @@
+{
+	"home": {
+		"id": 1,
+		"title": "主页",
+		"list": [
+			"fi-ss-house chimney",
+			"fi-ss-home",
+			"fi-ss-house blank"
+		]
+	},
+	"explorer": {
+		"id": 2,
+		"title": "探索",
+		"list": [
+			"fi-sr-navigation",
+			"fi-sr-chart-network"
+		]
+	},
+	"article": {
+		"id": 3,
+		"title": "文章",
+		"list": [
+			"fi-ss-book",
+			"fi-ss-book-open-cover",
+			"fi-bs-book-open-cover"
+		]
+	},
+	"learning": {
+		"id": 4,
+		"title": "学习词块",
+		"list": [
+			"fi-ss-coins"
+		]
+	},
+	"review": {
+		"id": 5,
+		"title": "复习词块",
+		"list": [
+			"fi fi-ss-globe-alt"
+		]
+	},
+	"repository": {
+		"id": 6,
+		"title": "词块库",
+		"list": [
+			"fi-ss-coins"
+		]
+	},
+	"collection": {
+		"id": 7,
+		"title": "文章收藏",
+		"list": [
+			"fi-sr-followcollection",
+			"fi-sr-star",
+			"fi-ss-heart"
+		]
+	},
+	"record": {
+		"id": 8,
+		"title": "学习记录",
+		"list": [
+			"fi-sr-chart-pie-alt",
+			"fi-bs-chart-histogram"
+		]
+	},
+	"upload": {
+		"id": 9,
+		"title": "上传文章",
+		"list": [
+			"fi-ss-folder-upload",
+			"fi-ss-cloud upload"
+		]
+	},
+	"contact": {
+		"id": 10,
+		"title": "联系我们",
+		"list": [
+			"fi-sr-headset",
+			"fi-sr-phone-call",
+			"fi-ss-mailbox"
+		]
+	},
+	"extension": {
+		"id": 11,
+		"title": "拓展服务",
+		"list": [
+			"fi-bs-expand-arrows"
+		]
+	},
+	"sponsor": {
+		"id": 12,
+		"title": "捐赠我们",
+		"list": [
+			"fi-sr-sack dollar",
+			"fi-ss-piggy-bank",
+			"fi-sr-usd-square"
+		]
+	},
+	"user": {
+		"id": 13,
+		"title": "设置/用户",
+		"list": [
+			"fi-ss-user",
+			"fi fi-ss-users",
+			"fi-sr-settings",
+			"fi-ss-settings-sliders"
+		]
+	}
+}

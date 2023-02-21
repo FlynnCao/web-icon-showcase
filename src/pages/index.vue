@@ -1,59 +1,65 @@
 <script setup lang="ts">
-const user = useUserStore()
-const name = $ref(user.savedName)
+import axios from 'axios'
 
-const router = useRouter()
-const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+interface Info {
+  home: InfoItem
+  explorer: InfoItem
+  article: InfoItem
+  learning: InfoItem
+  review: InfoItem
+  repository: InfoItem
+  collection: InfoItem
+  record: InfoItem
+  upload: InfoItem
+  contact: InfoItem
+  extension: InfoItem
+  sponsor: InfoItem
+  user: InfoItem
 }
 
-const { t } = useI18n()
+interface InfoItem {
+  id: number
+  title: string
+  list: string[]
+}
+const data = ref<Info | null>(null)
+
+onMounted(() => {
+  axios.get('icons.json').then((res) => {
+    data.value = res.data
+  })
+})
 </script>
 
 <template>
-  <div>
-    <div text-4xl>
-      <div i-carbon-campsite inline-block />
-    </div>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em text-sm opacity-75>{{ t('intro.desc') }}</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      :aria-label="t('intro.whats-your-name')"
-      type="text"
-      autocomplete="false"
-      p="x4 y2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
-
-    <div>
-      <button
-        btn m-3 text-sm
-        :disabled="!name"
-        @click="go"
-      >
-        {{ t('button.go') }}
-      </button>
-    </div>
-  </div>
+  <h1 class=" text-red-500">
+    在下面点击选择你喜欢的图标
+  </h1>
+  <i class="fi fi-br-search" />
+  <h2>主页</h2>
+  <TransIcon v-for="(item, index) in data?.home?.list" :key="index" :class-name="item" />
+  <h2>探索</h2>
+  <TransIcon v-for="(item, index) in data?.explorer?.list" :key="index" :class-name="item" />
+  <h2>文章</h2>
+  <TransIcon v-for="(item, index) in data?.article?.list" :key="index" :class-name="item" />
+  <h2>学习词块</h2>
+  <TransIcon v-for="(item, index) in data?.learning?.list" :key="index" :class-name="item" />
+  <h2>复习词块</h2>
+  <TransIcon v-for="(item, index) in data?.review?.list" :key="index" :class-name="item" />
+  <h2>词块库</h2>
+  <TransIcon v-for="(item, index) in data?.repository?.list" :key="index" :class-name="item" />
+  <h2>文章收藏</h2>
+  <TransIcon v-for="(item, index) in data?.collection?.list" :key="index" :class-name="item" />
+  <h2>学习记录</h2>
+  <TransIcon v-for="(item, index) in data?.record?.list" :key="index" :class-name="item" />
+  <h2>上传文章</h2>
+  <TransIcon v-for="(item, index) in data?.upload?.list" :key="index" :class-name="item" />
+  <h2>联系我们</h2>
+  <TransIcon v-for="(item, index) in data?.contact?.list" :key="index" :class-name="item" />
+  <h2>拓展服务</h2>
+  <TransIcon v-for="(item, index) in data?.extension?.list" :key="index" :class-name="item" />
+  <h2>捐赠我们</h2>
+  <TransIcon v-for="(item, index) in data?.sponsor?.list" :key="index" :class-name="item" />
 </template>
 
 <route lang="yaml">

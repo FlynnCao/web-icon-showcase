@@ -3,7 +3,7 @@
     <RouterView />
     <Footer />
     <div class="mt-5 mx-auto text-center opacity-75 dark:opacity-50 text-sm">
-      [Home Layout]
+      Le vent se lève, il faut tenter de vivre
     </div>
   </main>
 </template>
